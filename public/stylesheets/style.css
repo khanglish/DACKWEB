@@ -1,3 +1,13 @@
 p.h4{
  color:red;   
 }
+hr{
+    border-top:2px solid cornflowerblue;
+}
+.row > div[class*='col-'] {
+    display: flex;
+    flex:1 0 auto;
+}
+.price{
+    color:red;
+}

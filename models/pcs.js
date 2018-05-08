@@ -1,19 +1,19 @@
 let mongoose = require('mongoose');
-let validator = require('validator');
-let assert = require('assert');
+// let validator = require('validator');
+// let assert = require('assert');
 
 var Schema = mongoose.Schema;
 var schema = new Schema({
-	"_id":{
-        type: String, 
-		required: true, 
-		unique: true
+	"_id": {
+        type: String,
+		required: true,
+		unique: true,
     },
     "imagepath": {type: String},
     "model": {
-        type: String, 
-		required: true, 
-		unique: true
+        type: String,
+		required: true,
+		unique: true,
     },
     "cpu": {type: String},
     "ram": {type: String},
@@ -26,7 +26,7 @@ var schema = new Schema({
     "weight": {type: String},
     "battery": {type: String},
     "os": {type: String},
-    "price":{
+    "price": {
 		type: Number,
 		min: 0,
 	},

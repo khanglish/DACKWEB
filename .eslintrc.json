@@ -1,8 +1,14 @@
 {
     "extends": "google",
+    "env":{
+        "es6": true,
+        "node":true 
+    },
     "rules":{
         "no-var":"off",
         "new-cap":"off",
-        "quotes":"off"   
+        "quotes":"off",
+        "linebreak-style":"off",
+        "no-tabs":"off"   
     }
 }
