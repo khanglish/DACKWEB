@@ -1,6 +1,4 @@
 let mongoose = require('mongoose');
-// let validator = require('validator');
-// let assert = require('assert');
 
 // Define a schema
 var Schema = mongoose.Schema;
