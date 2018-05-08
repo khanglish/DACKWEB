@@ -4,11 +4,6 @@ let mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var schema = new Schema({
-	"_id": {
-        type: String,
-		required: true,
-		unique: true,
-    },
     "imagepath": {type: String},
     "model": {
         type: String,

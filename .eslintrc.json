@@ -9,6 +9,8 @@
         "new-cap":"off",
         "quotes":"off",
         "linebreak-style":"off",
-        "no-tabs":"off"   
+        "no-tabs":"off",
+        "max-len":"off",
+        "Require-jsdoc":"off"   
     }
 }
