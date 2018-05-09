@@ -19,8 +19,7 @@ var schema= new Schema({
 		min: 0,
 	},
     "tech": {
-		type: Number,
-		min: 0,
+		type: String,
 	},
 });
 
