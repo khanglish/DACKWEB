@@ -5,7 +5,19 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagePath}}">
+      <img class="card-img-top" src="{{this.imagePath}}" href="#" data-toggle="tooltip" title=" Model: {{this.model}}
+    CPU: {{this.cpu}}
+    Ram: {{this.ram}}
+    Storage: {{this.storage}}
+    CD?DVD: {{this.cdndvd}}
+    VGA: {{this.vga}}
+    Monitor: {{this.monitor}}
+    Connection: {{this.connection}}
+    Keyboard:{{this.keyboard}}
+    Tech: {{this.tech}}
+    Weight: {{this.weight}}
+    Battery: {{this.battery}}
+    Os: {{this.os}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
@@ -30,7 +42,19 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagepath}}">
+      <img class="card-img-top" src="{{this.imagepath}}" href="#" data-toggle="tooltip" title="
+      Model: {{this.model}} 
+      CPU: {{this.cpu}}
+      RAM: {{this.ram}} GB
+      Storage: {{this.storage}}
+      {{this.cdndvd}}
+      VGA: {{this.vga}}
+      Monitor: {{this.monitor}}
+      Connection: {{this.connection}}
+      Tech: {{this.tech}}
+      Weight: {{this.weight}}
+      Battery: {{this.battery}}
+      OS: {{this.os}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
@@ -55,7 +79,15 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagepath}}">
+      <img class="card-img-top" src="{{this.imagepath}}" href="#" data-toggle="tooltip" title="
+       Model: {{this.model}} 
+      Size: {{this.size}} inch
+      Resolution: {{this.resolution}}
+      Monitor: {{this.monitor}}
+      Refrate: {{this.refrate}}
+      Resrime: {{this.resrime}}
+      Connection: {{this.connection}}
+      Weight: {{this.weight}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
@@ -73,3 +105,4 @@
   {{/each}}
 </div>
 {{/each}}
+

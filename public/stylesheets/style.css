@@ -11,3 +11,11 @@ hr{
 .price{
     color:red;
 }
+.menu ul li{
+	list-style-type: none;
+}
+.details {
+    max-width: 50px;   
+    text-align: left;
+    display: none;
+}
