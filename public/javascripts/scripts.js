@@ -23,3 +23,5 @@ function covert(string) {
     }
     return result + arr.pop() + "   VNĐ";
 }
+
+// test area below
