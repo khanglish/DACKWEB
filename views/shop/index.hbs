@@ -5,23 +5,14 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagePath}}" href="#" data-toggle="tooltip" title=" Model: {{this.model}}
-    CPU: {{this.cpu}}
-    Ram: {{this.ram}}
-    Storage: {{this.storage}}
-    CD?DVD: {{this.cdndvd}}
-    VGA: {{this.vga}}
-    Monitor: {{this.monitor}}
-    Connection: {{this.connection}}
-    Keyboard:{{this.keyboard}}
-    Tech: {{this.tech}}
-    Weight: {{this.weight}}
-    Battery: {{this.battery}}
-    Os: {{this.os}}">
+      <img class="card-img-top" src="{{this.imagePath}}" href="#" data-toggle="tooltip" title=" Model: {{this.model}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
           <p class="card-text">{{this.model}}</p>
+          <a href="/laptops/{{this.model}}" target="_blank">
+            <p class="details text-right h6">Details ></p>
+          </a>
           <a href="#">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
@@ -42,23 +33,14 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagepath}}" href="#" data-toggle="tooltip" title="
-      Model: {{this.model}} 
-      CPU: {{this.cpu}}
-      RAM: {{this.ram}} GB
-      Storage: {{this.storage}}
-      {{this.cdndvd}}
-      VGA: {{this.vga}}
-      Monitor: {{this.monitor}}
-      Connection: {{this.connection}}
-      Tech: {{this.tech}}
-      Weight: {{this.weight}}
-      Battery: {{this.battery}}
-      OS: {{this.os}}">
+      <img class="card-img-top" src="{{this.imagepath}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
           <p class="card-text">{{this.model}}</p>
+          <a href="/pcs/{{this.model}}" target="_blank">
+            <p class="details text-right h6">Details ></p>
+          </a>
           <a href="#">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
@@ -79,19 +61,14 @@
   {{# each this }}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="{{this.imagepath}}" href="#" data-toggle="tooltip" title="
-       Model: {{this.model}} 
-      Size: {{this.size}} inch
-      Resolution: {{this.resolution}}
-      Monitor: {{this.monitor}}
-      Refrate: {{this.refrate}}
-      Resrime: {{this.resrime}}
-      Connection: {{this.connection}}
-      Weight: {{this.weight}}">
+      <img class="card-img-top" src="{{this.imagepath}}">
       <div class="card-body d-flex flex-column">
         <div class="mt-auto">
           <p class="card-text price" > {{this.price}}</p>
           <p class="card-text">{{this.model}}</p>
+          <a href="/monitors/{{this.model}}" target="_blank">
+            <p class="details text-right h6">Details ></p>
+          </a>
           <a href="#">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
