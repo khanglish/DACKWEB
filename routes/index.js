@@ -35,19 +35,19 @@ router.get('/', function(req, res, next) {
 router.get('/laptops/:model', function(req, res) {
   Laptop.findOne({'model': req.params.model}, function(err, lap) {
     if (err) return;
-    res.render('shop/lap', {lap: lap});
+    res.render('shop/lap', {title: req.params.model, lap: lap});
   });
 });
 router.get('/pcs/:model', function(req, res) {
   Pc.findOne({'model': req.params.model}, function(err, pc) {
     if (err) return;
-    res.render('shop/pcs', {pc: pc,});
+    res.render('shop/pcs', {title: req.params.model, pc: pc});
   });
 });
 router.get('/monitors/:model', function(req, res) {
   Monitor.findOne({'model': req.params.model}, function(err, monitor) {
     if (err) return;
-    res.render('shop/monitor', {monitor:monitor});
+    res.render('shop/monitor', {title: req.params.model, monitor: monitor});
   });
 });
 module.exports = router;

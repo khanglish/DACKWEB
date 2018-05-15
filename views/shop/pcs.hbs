@@ -1,23 +1,67 @@
 {{# pc}}
-    <div class="detailsL">
-        <img class="card-img-top" src="{{imagepath}}">
+<div class="row">
+    <div class="detailsL col-lg-3">
+        <img class="img-fluid mt-2" src="{{imagepath}}">
+
     </div>
-    <div class="detailsR">
-        <h1> Thông tin chi tiết sản phẩm</h1> <br>
-        <ul>
-        <li><h4 class="dc">Model:</h4> {{model}} </li>
-        <li><h4 class="dc">CPU:</h4> {{cpu}}</li> 
-        <li><h4 class="dc">Ram:</h4> {{ram}}</li>
-        <li><h4 class="dc">Storage:</h4> {{storage}}</li>
-        <li><h4 class="dc">CD/DVD:</h4> {{cdndvd}}</li>
-        <li><h4 class="dc">VGA:</h4> {{vga}}</li>
-        <li><h4 class="dc">Monitor:</h4> {{monitor}}</li>
-        <li><h4 class="dc">Connection:</h4> {{connection}}</li>
-        <li><h4 class="dc">Keyboard:</h4>{{keyboard}}</li>
-        <li><h4 class="dc">Tech:</h4> {{tech}}</li>
-        <li><h4 class="dc">Weight:</h4> {{weight}}</li>
-        <li><h4 class="dc">Battery:</h4> {{battery}}</li>
-        <li><h4 class="dc">OS:</h4>{{os}}</li>    
-    </ul>
-    </div>  
+    <div class="table-responsive col-lg-9 mt-5">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th scope="row">Price</th>
+                    <td class="price">{{price}} </td>
+                </tr>
+                <tr>
+                    <th scope="row">Model</th>
+                    <td>&nbsp;{{model}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">CPU</th>
+                    <td>&nbsp;{{cpu}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ram</th>
+                    <td>&nbsp;{{ram}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Storage</th>
+                    <td>&nbsp;{{storage}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">CD/DVD</th>
+                    <td>&nbsp;{{cdndvd}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">VGA</th>
+                    <td>&nbsp;{{vga}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Monitor</th>
+                    <td>&nbsp;{{monitor}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Connection</th>
+                    <td>&nbsp;{{connection}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tech</th>
+                    <td>&nbsp;{{tech}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Weight</th>
+                    <td>&nbsp;{{weight}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Battery</th>
+                    <td>&nbsp;{{battery}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">OS</th>
+                    <td>&nbsp;{{os}}</td>
+                </tr>
+                <!-- DivTable.com -->
+            </tbody>
+        </table>
+    </div>
+</div>
 {{/pc}}
