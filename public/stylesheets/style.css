@@ -19,23 +19,11 @@ hr{
 	height: 100%;
 	width: 100%;
 }
-
-/*
-.detailsR {
-     float:right; 
-    text-align: left;
-    font-weight: strong;
-    width:50%;
+.push_footer{
+    min-height: calc(100vh - 40px);
 }
-.detailsR h1 {
-    text-align: center;
-} 
-.dc {
-    font-weight: strong;
-    display: inline;
-    padding: 4px;
-} */
 .table{
 	width:100%;
 }
+
 /* test-area */
