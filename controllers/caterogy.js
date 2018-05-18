@@ -32,7 +32,7 @@ exports.caterogy = function(req, res) {
     }
     function letRender(doc) {
         res.render('caterogy/Caterogy', {
-            title: req.params.label,
+            title: req.params.type+" "+req.params.label,
             doc: doc,
             label: req.params.label,
             type: req.params.type,
