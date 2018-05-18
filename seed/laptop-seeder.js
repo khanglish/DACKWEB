@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://admin:admin@ds111370.mlab.com:11370/ktreeteam');
 var laptops = [
     new Laptop({
-        "imagePath": "https://i.imgur.com/Y8s1pwM.png",
+        "imagepath": "https://i.imgur.com/Y8s1pwM.png",
         "model": "Asus ROG Strix GL553VE-FY329T",
         "cpu": "Intel® Core i7-7700HQ (2.8GHz upto 3.8GHz, 4Cores, 8Threads, 6MB cache, FSB 8GT/s)",
         "ram": "8GB DDR4 2400MHz (1x8GB) + 1 slot Ram.",
@@ -20,7 +20,7 @@ var laptops = [
         "price": 24990000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/KMbzHxd.png",
+        "imagepath": "https://i.imgur.com/KMbzHxd.png",
         "model": "Asus VivoBook S15 S510UA-BQ111T",
         "cpu": "Intel® Core™ i3-7100U (2.4GHz, 2Cores, 4Threads, 3MB Cache, FSB 4GT/s)",
         "ram": "4GB DDR4 Buss 2133 MHz, 2 Slots",
@@ -37,7 +37,7 @@ var laptops = [
         "price": 12250000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/aHxcqrF.png",
+        "imagepath": "https://i.imgur.com/aHxcqrF.png",
         "model": "Asus VivoBook S15 S510UQ-BQ483T",
         "cpu": "Intel® Core™ i7-8550U (1.8GHz Upto 4.0GHz, 4Cores, 8Threads, 8MB cache, FSB 4GT/s)",
         "ram": "8GB DDR4 Buss 2400MHz, 2 Slots RAM",
@@ -54,7 +54,7 @@ var laptops = [
         "price": 19850000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/PmiOHaj.jpg",
+        "imagepath": "https://i.imgur.com/PmiOHaj.jpg",
         "model": "Dell Inspiron 7567-N7567B",
         "cpu": "Intel® Core™ i7-7700HQ (2.8GHz upto 3.8GHz, 4Cores, 8Threads, 6MB cache, FSB 8GT/s)",
         "ram": "8GB DDr4 Bus 2400Mhz (2 Slot, 8GB x 01)",
@@ -71,7 +71,7 @@ var laptops = [
         "price": 29390000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/BQgyHC7.jpg",
+        "imagepath": "https://i.imgur.com/BQgyHC7.jpg",
         "model": "Dell Vostro 7570-70138770",
         "cpu": "Intel® Core™ i7-7700HQ (2.8GHz upto 3.8GHz, 4Cores, 8Threads, 6MB cache, FSB 8GT/s)",
         "ram": "8GB DDR4 2400MHz, 2 Slot, Max 32GB",
@@ -88,7 +88,7 @@ var laptops = [
         "price": 29990000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/5J8smQh.jpg",
+        "imagepath": "https://i.imgur.com/5J8smQh.jpg",
         "model": "Dell Inspiron 5567-M5I5353",
         "cpu": "Intel® Core™ i5-7200U (2.5GHz upto 3.1 GHz, 2Cores, 4Threads, 3MB Cache, FSB 4GT/s)",
         "ram": "8GB DDR4 Bus 2400Mhz",
@@ -105,7 +105,7 @@ var laptops = [
         "price": 14900000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/i66jzN9.jpg",
+        "imagepath": "https://i.imgur.com/i66jzN9.jpg",
         "model": "Dell Vostro V5468-70087067",
         "cpu": "Intel® Core™ i7-7500U (2.7GHz upto 3.5GHz, 2Cores, 4Threads, 4MB cache, FSB 4GT/s)",
         "ram": "8GB DDR4 2400MHz (1x8GB) + 1 slot Ram.",
@@ -122,7 +122,7 @@ var laptops = [
         "price": 21000000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/gLwShZU.jpg",
+        "imagepath": "https://i.imgur.com/gLwShZU.jpg",
         "model": "Dell Inspiron 7567-N7567C",
         "cpu": "Intel® Core™ i7-7700HQ (2.8GHz upto 3.8GHz, 4Cores, 8Threads, 6MB cache, FSB 8GT/s)",
         "ram": "8GB DDr4 Bus 2400Mhz (2 Slot, 8GB x 01)",
@@ -139,7 +139,7 @@ var laptops = [
         "price": 24990000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/76HrlGi.jpg",
+        "imagepath": "https://i.imgur.com/76HrlGi.jpg",
         "model": "Asus X541UV-GO607D",
         "cpu": "Intel® Core™ i5-7200U (2.5GHz upto 3.1 GHz, 2Cores, 4Threads, 3MB Cache, FSB 4GT/s)",
         "ram": "4GB DDR4 Bus 2133MHz, 1 Slot, Max 16GB",
@@ -156,7 +156,7 @@ var laptops = [
         "price": 12490000,
     }),
     new Laptop({
-        "imagePath": "https://i.imgur.com/d44HhZa.jpg",
+        "imagepath": "https://i.imgur.com/d44HhZa.jpg",
         "model": "Acer Swift 5 SF514-52T-50G2 (NX.GTMSV.001)",
         "cpu": "Intel® Core™ i5-8250U (1.60GHz Up to 3.40 GHz, 4Cores, 8Threads, 6MB Cache, FSB 4GT/s)",
         "ram": "8GB LPDDR3-2133MHz",
