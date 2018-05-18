@@ -1,57 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var Laptop = require('../models/laptops');
+/* var Laptop = require('../models/laptops');
 var Pc = require('../models/pcs');
-var Monitor = require('../models/monitors');
+var Monitor = require('../models/monitors'); */
+
+var indexController = require('../controllers/index_controllers');
+var detailsControllers = require('../controllers/details_controllers');
+
+var caterogyControllers = require('../controllers/caterogy');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  Laptop.find().exec(function(err, laptops) {
-    Pc.find().exec(function(err, pcs) {
-      Monitor.find().exec(function(err, monitors) {
-      var laptopChunks = [];
-      var pcChunks = [];
-      var monitorChunks = [];
-      var chunkSize = 3;
-      for (var i = 0; i < laptops.length; i += chunkSize) {
-        laptopChunks.push(laptops.slice(i, i + chunkSize));
-      }
-      for (var i = 0; i < pcs.length; i += chunkSize) {
-        pcChunks.push(pcs.slice(i, i + chunkSize));
-      }
-      for (var i = 0; i < monitors.length; i += chunkSize) {
-        monitorChunks.push(monitors.slice(i, i + chunkSize));
-      }
-        res.render('shop/index', {
-          title: 'Treek',
-          laptops: laptopChunks,
-          pcs: pcChunks,
-          monitors: monitorChunks,
-        });
-      });
-    });
-  });
-});
+router.get('/', indexController.display_product);
 
-router.get('/laptops/:model', function(req, res) {
-  Laptop.findOne({'model': req.params.model}, function(err, lap) {
-    if (err) return;
-    res.render('shop/lap', {title: req.params.model, lap: lap});
-  });
-});
-router.get('/pcs/:model', function(req, res) {
-  Pc.findOne({'model': req.params.model}, function(err, pc) {
-    if (err) return;
-    res.render('shop/pcs', {title: req.params.model, pc: pc});
-  });
-});
-router.get('/monitors/:model', function(req, res) {
-  Monitor.findOne({'model': req.params.model}, function(err, monitor) {
-    if (err) return;
-    res.render('shop/monitor', {title: req.params.model, monitor: monitor});
-  });
-});
+router.get('/:type/details/:model', detailsControllers.display_details);
 
-router.get('/laptops/phanloai/asus', function(req, res) {
+router.get('/:type/phanloai/:label', caterogyControllers.caterogy);
+
+/* router.get('/laptops/phanloai/asus', function(req, res) {
   Laptop.find({'label': 'Asus'}, function(err, lap1) {
     if (err) return;
     res.render('shop/laptopasus', {title: 'Laptop Asus', lap1: lap1});
@@ -105,5 +70,5 @@ router.get('/pcs/phanloai/msi', function(req, res) {
     if (err) return;
     res.render('shop/pcmsi', {title: 'Pcs MSI', pc1: pc1});
   });
-});
+}); */
 module.exports = router;

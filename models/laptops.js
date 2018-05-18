@@ -26,6 +26,10 @@ var schema = new Schema({
 		type: Number,
 		min: 0,
 	},
+	"label": {
+		type: String,
+		required: true,
+	},
 }
 );
 

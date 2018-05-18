@@ -22,7 +22,11 @@ var schema = new Schema({
     "price": {
 		type: Number,
 		min: 0,
-	},
+    },
+    "label": {
+        type: String,
+        required: true,
+    }
 });
 
 module.exports = mongoose.model('pcs', schema );

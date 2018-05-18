@@ -21,6 +21,10 @@ var schema= new Schema({
     "tech": {
 		type: String,
 	},
+	label: {
+		type: String,
+		required: true,
+	},
 });
 
 module.exports = mongoose.model('monitors', schema );
