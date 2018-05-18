@@ -9,7 +9,7 @@ exports.caterogy = function(req, res) {
                 console.log(err);
                 return;
             }
-            res.render('shop/laptopCaterogy', {title: req.params.label, lap1: lap1});
+            res.render('caterogy/laptopCaterogy', {title: req.params.label, lap1: lap1});
         });
     }
     if (req.params.type == "pcs") {
@@ -18,7 +18,7 @@ exports.caterogy = function(req, res) {
                 console.log(err);
                 return;
             }
-            res.render('shop/pcCaterogy', {title: req.params.label, pc1: pc1});
+            res.render('caterogy/pcCaterogy', {title: req.params.label, pc1: pc1});
         });
     }
     if (req.params.type == "monitors") {
@@ -27,7 +27,7 @@ exports.caterogy = function(req, res) {
                 console.log(err);
                 return;
             }
-            res.render('shop/monitorCaterogy', {title: req.params.label, mon1: mon1});
+            res.render('caterogy/monitorCaterogy', {title: req.params.label, mon1: mon1});
         });
     }
 };
