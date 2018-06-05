@@ -25,6 +25,10 @@ var schema= new Schema({
 		type: String,
 		required: true,
 	},
+	"type":{
+		type: String,
+		required: true,
+	}
 });
 
 module.exports = mongoose.model('monitors', schema );

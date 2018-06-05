@@ -26,7 +26,11 @@ var schema = new Schema({
     "label": {
         type: String,
         required: true,
-    }
+    },
+    "type":{
+		type: String,
+		required: true,
+	}
 });
 
 module.exports = mongoose.model('pcs', schema );

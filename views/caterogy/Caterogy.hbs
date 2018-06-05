@@ -1,9 +1,9 @@
 <br><br><br>
-<p class="h5">{{type}} {{label}}</p>
+<p class="h5">{{typeTitle}} {{label}}</p>
 <hr/>
 
 <div class="row">
-{{#doc}}
+{{#each doc}}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
       <img class="card-img-top" src="{{imagepath}}" href="#" data-toggle="tooltip" title=" Model: {{model}}">
@@ -11,18 +11,15 @@
         <div class="mt-auto">
           <p class="card-text price" > {{price}}</p>
           <p class="card-text">{{model}}</p>
-          <a href="/laptops/details/{{model}}" target="_blank">
+          <a href="/{{type}}/details/{{model}}" target="_blank">
             <p class="details text-right h6">Details ></p>
           </a>
           <a href="#">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
-          {{!--
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> --}} {{!--
-          <small class="text-muted">9 mins</small> --}}
         </div>
       </div>
     </div>
   </div>
-  {{/doc}}
+  {{/each}}
 </div>
