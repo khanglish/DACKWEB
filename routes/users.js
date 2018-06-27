@@ -41,7 +41,7 @@ const isNotAuthenticated = (req, res, next) => {
 
 router.route('/register')
   .get(isNotAuthenticated, (req, res) => {
-    res.render('register');
+    res.render('../views/log in/register');
   })
   .post(async (req, res, next) => {
     try {
@@ -56,7 +56,7 @@ router.route('/register')
       const user = await User.findOne({ 'email': result.value.email });
       if (user) {
         req.flash('error', 'Email is already in use.');
-        res.redirect('/users/register');
+        res.redirect('../views/log in/register');
         return;
       }
 
@@ -107,7 +107,7 @@ router.route('/register')
 
 router.route('/login')
   .get(isNotAuthenticated, (req, res) => {
-    res.render('login');
+    res.render('../views/log in/login');
   })
   .post(passport.authenticate('local', {
     successRedirect: '/users/dashboard',
@@ -117,14 +117,14 @@ router.route('/login')
 
 router.route('/dashboard')
   .get(isAuthenticated, (req, res) => {
-    res.render('dashboard', {
+    res.render('../views/log in/dashboard', {
       username: req.user.username
     });
   });
 
 router.route('/verify')
   .get(isNotAuthenticated, (req, res) => {
-    res.render('verify');
+    res.render('../views/log in/verify');
   })
   .post(async (req, res, next) => {
     try {
