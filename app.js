@@ -35,6 +35,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use((req, res, next) => {
+  res.locals.success_messages = req.flash('success');
+  res.locals.error_messages = req.flash('error');
+  res.locals.isAuthenticated = req.user ? true : false;
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', require('./routes/users'));
@@ -42,26 +48,6 @@ app.use('/users', require('./routes/users'));
 
 
 
-
-
-app.get('/flash', function(req, res){
-  // Set a flash message by passing the key, followed by the value, to req.flash().
-  req.flash('info', 'Flash is back!')
-  res.redirect('/');
-});
- 
-app.get('/', function(req, res){
-  // Get an array of flash messages by passing the key to req.flash()
-  res.render('index', { messages: req.flash('info') });
-});
-
-
-app.use((req, res, next) => {
-  res.locals.success_messages = req.flash('success');
-  res.locals.error_messages = req.flash('error');
-  res.locals.isAuthenticated = req.user ? true : false;
-  next();
-});
 
 
 app.use(function(req, res, next) {

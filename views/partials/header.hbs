@@ -7,24 +7,29 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       {{!-- <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li> --}}
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-user-circle"></i> User Management
-        </a>
+      	{{#if isAuthenticated}}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-user-circle"></i>{{username}}
+          </a>
+        {{else}}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-user-circle"></i> User Management
+          </a>
+        {{/if}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
  			{{#if isAuthenticated}}
 	          	<a class="dropdown-item" href="/users/dashboard">Dashboard</a>
 	          	<div class="dropdown-divider"></div>
-	          	<a class="dropdown-item" href="/users/Log out">Log out</a>
-	        {{else}}
-	        	<a class="dropdown-item" href="/users/dashboard">Dashboard</a>
+	          	<a class="dropdown-item" href="/users/change">Change Password</a>
 	          	<div class="dropdown-divider"></div>
-	          	<a class="dropdown-item" href="/users/Log out">Log out</a>
+	          	<a class="dropdown-item" href="/users/Logout">Log out</a>
+	        {{else}}
 	         	<a class="dropdown-item" href="/users/register"> Sign up</a>
 	          	<div class="dropdown-divider"></div>
 	          	<a class="dropdown-item" href="/users/login">Log in</a>

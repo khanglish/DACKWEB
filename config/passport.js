@@ -26,7 +26,6 @@ passport.use('local', new LocalStrategy({
         if (!user) {
             return done(null, false, { message: 'Unknown User' });
         }
-        console.log(user);
         // 2) Check if the password is correct
         if(user.password != password){
             return done(null, false, { message: 'Unknown Password' });

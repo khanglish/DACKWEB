@@ -1,6 +1,7 @@
 var Laptop = require('../models/laptops');
 var Pc = require('../models/pcs');
 var Monitor = require('../models/monitors');
+var user = require('../models/user');
 
 exports.display_product = function(req, res, next) {
     Laptop.find().exec(function(err, laptops) {
