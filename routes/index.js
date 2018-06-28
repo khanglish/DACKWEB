@@ -10,10 +10,7 @@ var caterogyControllers = require('../controllers/caterogy_controllers');
 
 /* GET home page. */
 router.get('/', indexController.display_product);
-router.route('/')
-  .get((req, res) => {
-    res.render('../shop/index',{username: req.user.username});
-  })
+
 router.get('/:type/details/:model', detailsControllers.display_details);
 
 router.get('/:type/phanloai/:label', caterogyControllers.caterogy);
