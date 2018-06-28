@@ -7,6 +7,10 @@ var schema = new Schema({
     email: String,
     secretToken: String,
     active: Boolean,
+    lastname: String,
+    firstname: String,
+    phone: String,
+    address: String,
     username: String,
     password: String
 }, {

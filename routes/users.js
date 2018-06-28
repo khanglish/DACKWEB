@@ -16,6 +16,10 @@ router.get('/', function(req, res, next) {
 const userSchema = Joi.object().keys({
   email: Joi.string().email().required(),
   username: Joi.string().required(),
+  lastname: Joi.string().required(),
+  firstname: Joi.string().required(),
+  phone: Joi.string().required(),
+  address: Joi.string().required(),
   password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
   confirmationPassword: Joi.any().valid(Joi.ref('password')).required()
 });
@@ -108,7 +112,7 @@ router.route('/register')
       Have a pleasant day.` 
 
       // Send email
-      await mailer.sendEmail('dangduykhang97@gmail.com', result.value.email, 'Please verify your email!', html);
+      await mailer.sendEmail('duykhangkhang97@gmail.com', result.value.email, 'Please verify your email!', html);
 
       req.flash('success', 'Please check your email.');
       res.redirect('/users/login');
@@ -136,7 +140,7 @@ router.route('/dashboard')
 
 router.route('/verify')
   .get(isNotAuthenticated, (req, res) => {
-    res.render('../views/log in/verify',{username: req.user.username});
+    res.render('../views/log in/verify');
   })
   .post(async (req, res, next) => {
     try {
