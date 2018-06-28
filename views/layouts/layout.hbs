@@ -2,32 +2,39 @@
 <html>
 
 <head>
-  
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121553786-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121553786-1');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{title}}</title>
-  
+
   <!-- bootstrap cdn -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
-    crossorigin="anonymous">
-  {{!-- <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"> --}}
+    crossorigin="anonymous"> {{!--
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"> --}}
   <link rel="stylesheet" href="/stylesheets/demo.css">
-	<link rel="stylesheet" href="/stylesheets/footer-distributed-with-address-and-phones.css">
-  <link rel="shortcut icon" type="image/png" href="/images/favico.png"/>
+  <link rel="stylesheet" href="/stylesheets/footer-distributed-with-address-and-phones.css">
+  <link rel="shortcut icon" type="image/png" href="/images/favico.png" />
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
   <!--header-->
   {{#if success_messages }}
-      <div class="alert alert-success">{{success_messages}}</div>
-  {{/if}}
-  {{#if error_messages }}
-      <div class="alert alert-danger">{{error_messages}}</div>
-  {{/if}}
-  {{> header}}
+  <div class="alert alert-success">{{success_messages}}</div>
+  {{/if}} {{#if error_messages }}
+  <div class="alert alert-danger">{{error_messages}}</div>
+  {{/if}} {{> header}}
   <!--body-->
   <div class="container push_footer">
     {{{body}}}
