@@ -61,7 +61,7 @@ router.route('/register')
       }
 
       // Hash the password
-      const hash = await User.hashPassword(result.value.password);
+      //const hash = await User.hashPassword(result.value.password);
 
       // Generate secret token
       const secretToken = randomstring.generate();
