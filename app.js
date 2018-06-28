@@ -25,12 +25,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
-
-// catch 404 and forward to error handler
-
 app.use(bodyParser.json());
 app.use(session({
   cookie: { maxAge: 60000 },
@@ -47,6 +41,13 @@ app.use((req, res, next) => {
   res.locals.isAuthenticated = req.user ? true : false;
   next();
 });
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', indexRouter);
+app.use('/users', require('./routes/users'));
+// catch 404 and forward to error handler
+
+
+
 
 
 app.use(function(req, res, next) {

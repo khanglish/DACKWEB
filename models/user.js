@@ -7,6 +7,10 @@ var schema = new Schema({
     email: String,
     secretToken: String,
     active: Boolean,
+    lastname: String,
+    firstname: String,
+    phone: String,
+    address: String,
     username: String,
     password: String
 }, {
@@ -24,7 +28,7 @@ module.exports.hashPassword = async (password) => {
         throw new Error('Hashing failed', error);
     }
 };
-module.exports.comparePasswords = async (inputPassword, hashedPassword) => {
+module.exports.comparePassword = async (inputPassword, hashedPassword) => {
     try {
         return await bcrypt.compare(inputPassword, hashedPassword);
     } catch(error) {

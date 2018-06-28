@@ -7,20 +7,75 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       {{!-- <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li> --}}
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-user-circle"></i> User Management
-        </a>
+      	{{#if isAuthenticated}}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-user-circle"></i>{{username}}
+          </a>
+        {{else}}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-user-circle"></i> User Management
+          </a>
+        {{/if}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/login"> User account</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Logout</a>
+ 			{{#if isAuthenticated}}
+	          	<a class="dropdown-item" href="/users/dashboard">Dashboard</a>
+	          	<div class="dropdown-divider"></div>
+	          	<a class="dropdown-item" href="/users/change">Change Password</a>
+	          	<div class="dropdown-divider"></div>
+	          	<a class="dropdown-item" href="/users/Logout">Log out</a>
+	        {{else}}
+	         	<a class="dropdown-item" href="/users/register"> Sign up</a>
+	          	<div class="dropdown-divider"></div>
+	          	<a class="dropdown-item" href="/users/login">Log in</a>
+	        {{/if}}
         </div>
+      </li>
+      <li class="nav-item active">
+        <div class="container">
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+    Shopping cart
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Shopping cart</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <table id="myTable" class="table">
+          <tr>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          </tr>
+          </table><br><hr>
+          <div id="sumprice" style="float:right;color:red;"></div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Solve</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
       </li>
       {{!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>

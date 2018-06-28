@@ -36,6 +36,7 @@ exports.caterogy = function(req, res) {
             doc: doc,
             label: req.params.label,
             type: req.params.type,
+            username: req.user.username
         });
     }
 };

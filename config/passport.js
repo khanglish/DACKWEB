@@ -16,9 +16,9 @@ passport.deserializeUser(async (id, done) => {
 });
 
 passport.use('local', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
-    passReqToCallback: false
+    usernameField : 'email',
+    passwordField : 'password',
+    passReqToCallback : false
 }, async (email, password, done) => {
     try {
         // 1) Check if the email already exists
@@ -26,12 +26,14 @@ passport.use('local', new LocalStrategy({
         if (!user) {
             return done(null, false, { message: 'Unknown User' });
         }
-
         // 2) Check if the password is correct
-        const isValid = User.comparePasswords(password, user.password);
-        if (!isValid) {
+        if(user.password != password){
             return done(null, false, { message: 'Unknown Password' });
         }
+        // const isValid = User.comparePassword(password, user.password);
+        // if (!isValid) {
+        //     return done(null, false, { message: 'Unknown Password' });
+        // }
 
         // 3) Check if email has been verified
         if (!user.active) {

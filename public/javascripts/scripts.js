@@ -23,5 +23,43 @@ function covert(string) {
     }
     return result + arr.pop() + "   VNĐ";
 }
-
+//    var dem=1;
+//    var sumprice=0;
+//    var product=[];
+//    var fisrt=true;
+//    if(fisrt)
+//    {
+//     product = JSON.parse(localStorage.getItem("product")||"[]");
+//     loadData();
+//     fisrt=false;
+//    }
+// function addCart(price,name)
+// {
+//     sumprice=parseInt(sumprice)+parseInt(price);
+//    var table = document.getElementById("myTable").insertRow(dem);
+//     var tdName = table.insertCell(0);
+//    var tdPrice = table.insertCell(1);
+  
+//    tdName.innerHTML = name;
+//    tdPrice.innerHTML = price;
+//    $("#sumprice").text(sumprice);
+//     dem++;
+//     var arr={'name':name,'price':price};
+//     product.push(arr);
+//     localStorage.setItem("product",JSON.stringify(product));
+// }
+// function loadData()
+// {
+//      sumprice=0;
+//     for(var i=0;i<product.length;i++)
+//     {     
+//         var table = document.getElementById("myTable").insertRow(i+1);
+//     var tdName = table.insertCell(0);
+//    var tdPrice = table.insertCell(1);
+//     tdName.innerHTML = product[i].name;
+//    tdPrice.innerHTML = product[i].price;
+//    sumprice=parseInt(sumprice)+parseInt(product[i].price);
+//    $("#sumprice").text(sumprice);
+//     }
+// }
 // test area below

@@ -21,6 +21,12 @@
 
 <body>
   <!--header-->
+  {{#if success_messages }}
+      <div class="alert alert-success">{{success_messages}}</div>
+  {{/if}}
+  {{#if error_messages }}
+      <div class="alert alert-danger">{{error_messages}}</div>
+  {{/if}}
   {{> header}}
   <!--body-->
   <div class="container push_footer">

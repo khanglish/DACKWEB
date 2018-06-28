@@ -2,10 +2,12 @@ const nodemailer = require('nodemailer');
 const config = require('../config/mailer');
 
 const transport = nodemailer.createTransport({
-  service: 'Mailgun',
+  service: 'gmail',
+  secure: false,
+  port: 25,
   auth: {
-    user: config.MAILGUN_USER,
-    pass: config.MAILGUN_PASS
+    user: 'duykhangkhang97@gmail.com',
+    pass: 'duykhangkhang'
   },
   tls: {
     rejectUnauthorized: false
