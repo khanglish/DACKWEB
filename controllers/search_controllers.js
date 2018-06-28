@@ -5,8 +5,7 @@ var async = require('async');
 
 exports.search = function(req, res) {
     let model = req.query.model;
-    console.log(model);
-    if(model === undefined){
+    if(model === undefined || model == ""){
         res.render('search/result',{
             title: "Result",
             information: "The search string is empty, please type in search box.",
@@ -26,8 +25,7 @@ exports.search = function(req, res) {
         if(error){
             res.status(500).send(error);
             return;
-        }
-        console.log(resultSet);       
+        }     
         res.render('search/result',{
             title: "Result",
             laptops:resultSet.laptopList,
