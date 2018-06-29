@@ -20,8 +20,8 @@ const userSchema = Joi.object().keys({
   username: Joi.string().required(),
   lastname: Joi.string().required(),
   firstname: Joi.string().required(),
-  phone: Joi.string().required(),
   address: Joi.string().required(),
+  phone: Joi.string().required(),
   password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
   confirmationPassword: Joi.any().valid(Joi.ref('password')).required()
 });
@@ -29,6 +29,17 @@ const userSchema = Joi.object().keys({
 const userSchema1 = Joi.object().keys({
   password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
   confirmationPassword: Joi.any().valid(Joi.ref('password')).required()
+});
+
+const userSchema2 = Joi.object().keys({
+  lastname: Joi.string().required(),
+  firstname: Joi.string().required(),
+  address: Joi.string().required(),
+  phone: Joi.string().required()
+});
+
+const userSchema3 = Joi.object().keys({
+  email: Joi.string().email().required()
 });
 
 // Authorization 
@@ -117,7 +128,7 @@ router.route('/register')
       await mailer.sendEmail('duykhangkhang97@gmail.com', result.value.email, 'Please verify your email!', html);
 
       req.flash('success', 'Please check your email.');
-      res.redirect('/users/login');
+      res.redirect('/users/verify');
     } catch(error) {
       next(error);
     }
@@ -268,6 +279,73 @@ router.route('/change')
       req.logout();
       req.flash('success', 'Please check your email.');
       res.redirect('/users/verify');
+    } catch(error) {
+      next(error);
+    }
+  });
+router.route('/changeinfo')
+  .get(isAuthenticated, (req, res) => {
+    res.render('../views/log in/changeinfo',{lastname: req.user.lastname,
+      firstname: req.user.firstname,
+      address: req.user.address,
+      phone: req.user.phone});
+  })
+  .post(async (req, res, next) => {
+    try {
+      const result = Joi.validate(req.body, userSchema2);
+      if (result.error) {
+        req.flash('error', 'Data is not valid. Please try again.');
+        res.redirect('/users/changeinfo');
+        return;
+      }
+      
+      const user = await User.findOne({ 'username': req.user.username });
+      user.lastname = req.body.lastname;
+      user.firstname = req.body.firstname;
+      user.phone = req.body.phone;
+      user.address = req.body.address;
+
+      user.save();
+      
+      req.flash('success', 'Success to change information');
+      res.redirect('/users/dashboard');
+    } catch(error) {
+      next(error);
+    }
+  });
+
+router.route('/reset')
+  .get(isNotAuthenticated, (req, res) => {
+    res.render('../views/log in/reset');
+  })
+  .post(async (req, res, next) => {
+    try {
+      const result = Joi.validate(req.body, userSchema3);
+        if (result.error) {
+        req.flash('error', 'Data is not valid. Please try again.');
+        res.redirect('/users/register');
+        return;
+      }
+
+      const user1 = await User.findOne({ 'email': req.body.email });
+      console.log(user1);
+
+      const html = `Hi there,
+      <br/>
+      Please verify to change password by typing the following token:
+      <br/>
+      Your pass: <b>${user1.password}</b>
+      <br/>
+      On the following page:
+      <a href="http://localhost:3000/users/verify">http://localhost:3000/users/verify</a>
+      <br/><br/>
+      Have a pleasant day.` 
+
+      // Send email
+      await mailer.sendEmail('duykhangkhang97@gmail.com', user1.email, 'Your password!', html);
+      req.logout();
+      req.flash('success', 'Please check your email.');
+      res.redirect('/users/login');
     } catch(error) {
       next(error);
     }

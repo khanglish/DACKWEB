@@ -35,4 +35,4 @@ module.exports.comparePassword = async (inputPassword, hashedPassword) => {
         throw new Error('Comparing failed', error);
     }
 };
-module.exports = mongoose.model('User', schema);
+module.exports = mongoose.model('user', schema);
