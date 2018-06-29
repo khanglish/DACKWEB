@@ -10,8 +10,8 @@
 					<div class="btn-group">
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action </button>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Reduce by 1</a></li>
-							<li><a class="dropdown-item" href="#">Remove all</a></li>
+							<li><a class="dropdown-item" href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+							<li><a class="dropdown-item" href="/remove/{{this.item._id}}">Remove all</a></li>
 						</ul>
 					</div>
 				</li>
@@ -21,7 +21,7 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-			<strong>Total: {{totalPrice}}</strong>
+			<strong>Total: {{totalPrice}} vnd</strong>
 		</div>
 	</div>
 	<hr>
