@@ -1,5 +1,7 @@
 <p class="h5"><br><br><br>Laptop</p>
 <hr/>
+<div class="row">
+</div>
 {{# each laptops }}
 <div class="row">
   {{# each this }}
@@ -13,7 +15,7 @@
           <a href="/laptops/details/{{this.model}}" target="_blank">
             <p class="details text-right h6">Details ></p>
           </a>
-          <a href="#" onclick="addCart('{{this.price}}','{{this.model}}');">
+          <a href="/add-to-cart/{{this._id}}" onclick="addCart('{{this.price}}','{{this.model}}');">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
           {{!--
@@ -41,7 +43,7 @@
           <a href="/pcs/details/{{this.model}}" target="_blank">
             <p class="details text-right h6">Details ></p>
           </a>
-          <a href="#">
+          <a href="/add-to-cartt/{{this._id}}">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
           {{!--
@@ -69,7 +71,7 @@
           <a href="/monitors/details/{{this.model}}" target="_blank">
             <p class="details text-right h6">Details ></p>
           </a>
-          <a href="#">
+          <a href="/add-to-carttt/{{this._id}}">
             <button type="button" class="btn btn-block btn-sm  btn-success">Add to cart</button>
           </a>
           {{!--

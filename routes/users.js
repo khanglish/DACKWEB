@@ -6,6 +6,8 @@ const randomstring = require('randomstring');
 const mailer = require('../misc/mailer');
 
 const User = require('../models/user');
+const Cart = require('../models/cart');
+const Order = require('../models/order');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -35,7 +37,7 @@ const isAuthenticated = (req, res, next) => {
     return next();
   } else {
     req.flash('error', 'Sorry, but you must be registered first!');
-    res.redirect('/',{username: req.user.username});
+    res.redirect('/');
   }
 };
 
@@ -126,16 +128,40 @@ router.route('/login')
     res.render('../views/log in/login');
   })
   .post(passport.authenticate('local', {
-    successRedirect: '/users/dashboard',
     failureRedirect: '/users/login',
     failureFlash: true
-  }));
+  }),function(req,res,next){
+    if(req.session.oldUrl){
+      var oldUrl= req.session.oldUrl;
+   
+      res.redirect(req.session.oldUrl);
+      req.session.oldUrl=null;
+    }else{
+      res.redirect('/users/dashboard');
+    }
+  });
 
 router.route('/dashboard')
   .get(isAuthenticated, (req, res) => {
-    res.render('../views/log in/dashboard', {
-      username: req.user.username
+    Order.find({'user': req.user.username},function(err,orders){
+      if(err){
+        return res.write('Error!');
+      }
+      var cart;
+      orders.forEach(function(order){
+        cart=new Cart(order.cart);
+        order.items=cart.generateArray();
+      });
+      res.render('../views/log in/dashboard', {
+      username: req.user.username,
+      lastname: req.user.lastname,
+      firstname: req.user.firstname,
+      address: req.user.address,
+      phone: req.user.phone,
+      orders:orders
     });
+    });
+    
   });
 
 router.route('/verify')

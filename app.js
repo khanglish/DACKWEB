@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 var indexRouter = require('./routes/index');
 const passport = require('passport');
+var MongoStore=require('connect-mongo')(session);
 
 // var usersRouter = require('./routes/users');
 require('./config/passport');
@@ -27,10 +28,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(session({
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 180*60*1000 },
   secret: 'codeworkrsecret',
   saveUninitialized: false,
-  resave: false
+  resave: false,
+  store: new MongoStore({mongooseConnection: mongoose.connection})
 }))
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,7 +61,7 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  res.locals.session=req.session;
   // render the error page
   res.status(err.status || 500);
   res.render('error');

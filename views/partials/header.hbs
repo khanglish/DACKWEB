@@ -37,43 +37,13 @@
         </div>
       </li>
       <li class="nav-item active">
-        <div class="container">
-  <!-- Button to Open the Modal -->
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-    Shopping cart
-  </button>
-
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Shopping cart</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <table id="myTable" class="table">
-          <tr>
-          <th>Tên sản phẩm</th>
-          <th>Giá</th>
-          </tr>
-          </table><br><hr>
-          <div id="sumprice" style="float:right;color:red;"></div>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Solve</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <a href="/shopping-cart/">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Shopping cart</button>
+              <span class="badge badge-secondary">{{session.cart.totalQty}}</span> 
+          </a>
+          </div>
+      </li>
   
 </div>
       </li>

@@ -1,6 +1,27 @@
 <!-- Jumbotron -->
 <div class="jumbotron">
-  <h1>Secret Page!</h1>
-  <p class="lead">Only logged in users should be see this.</p>
+  <h1>User profile!</h1>
   <p class="lead">Username: {{username}}</p>
+  <p class="lead">Last name: {{lastname}}</p>
+  <p class="lead">First name: {{firstname}}</p>
+  <p class="lead">Address: {{address}}</p>
+  <p class="lead">Phone: {{phone}}</p>
+</div>
+</div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h2>My Order</h2>
+		{{#each orders}}
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<ul class="list-group">
+					{{#each this.items}}
+					<li class="list-group-item"><span class="badge">{{this.price}} vnd</span>{{this.item.model}} | {{this.qty}} units</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+		<div class="panel-footer"><strong>Total pay: {{this.cart.totalPrice}} vnd</strong></div>
+		{{/each}}
+
+	</div>
 </div>
